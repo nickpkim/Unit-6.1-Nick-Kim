@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.*;
 public class ArrayListTester {
     public static void main(String[] args) {
@@ -27,12 +26,12 @@ public class ArrayListTester {
         System.out.println("Expected: [W, e, s, t,  , L, i, n, n] \n Actual: " + parseIntoArrayList("West Linn"));
 
         System.out.println();
-/*
+
         System.out.println("Test FindMin for Personobjects");
         ArrayList<Person> people = new ArrayList<>(Arrays.asList(new Person(32, "Abe"),
                 new Person(14, "Betty"), new Person(18, "Cris")));
         System.out.println(people);
-        System.out.println("Expected: BETTY \n Actual: " + findMin(people));
+        System.out.println("Expected: Betty \n Actual: " + findMin(people));
 
         System.out.println();
 
@@ -47,7 +46,6 @@ public class ArrayListTester {
         System.out.println("# of Quarters = " + myPurse.count(new Coin(.25, "quarter")));
         System.out.println("Smallest Coin = " + myPurse.findSmallest());
         System.out.println("Total of Purse = $" + myPurse.getTotal());
-        */
     }
     public static void removeZeros(ArrayList<Integer> list){
         for (int i = 0; i < list.size(); i++){
@@ -79,4 +77,14 @@ public class ArrayListTester {
         }
         return list;
     }
+    public static String findMin(ArrayList<Person> list){
+        int minIndex = 0;
+        for (int i = 1; i < list.size(); i++){
+            if (list.get(i).getAge() < list.get(minIndex).getAge()){
+                minIndex = i;
+            }
+        }
+        return list.get(minIndex).getName();
+    }
+
 }
