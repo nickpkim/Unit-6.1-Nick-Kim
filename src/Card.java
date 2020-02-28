@@ -1,28 +1,40 @@
 public class Card {
     private int value;
-    private String suit;
-    public Card(int value, String suit){
+    private int suit;
+    public Card(int value, int suit){
         this.value = value;
         this.suit = suit;
     }
     public int getValue(){
         return value;
     }
-    public String getSuit(){
+    public int getSuit(){
         return suit;
     }
     public String toString(){
+        String printVal = "";
+        String printSuit = "";
         if (value == 11){
-            return "J"+suit;
+            printVal = "J";
         } else if (value == 12){
-            return "Q"+suit;
+            printVal = "Q";
         } else if (value == 13){
-            return "K"+suit;
+            printVal = "K";
         } else if (value == 14){
-            return "A"+suit;
+            printVal = "A";
         } else {
-            return value+suit;
+            printVal = value+"";
         }
+        if (suit == 1){
+            printSuit = "♣";
+        } else if (suit == 2){
+            printSuit = "♦";
+        } else if (suit == 3){
+            printSuit = "♥";
+        } else {
+            printSuit = "♠";
+        }
+        return printVal+printSuit;
     }
     //♠♥♣♦
 }

@@ -4,6 +4,21 @@ public class Deck {
     public Deck(){
         cards = new ArrayList();
     }
+    public void makeFull(){
+        for (int suit = 1; suit <= 4; suit++){
+            for (int value = 2; value <= 14; value++){
+                cards.add(new Card(value, suit));
+            }
+        }
+    }
+    public void dealHalf(Deck half){
+        for (int i = 51; i > 25; i--){
+            int index = (int)(Math.random()*i);
+            System.out.println(index);
+            half.add(cards.get(index));
+            cards.remove(index);
+        }
+    }
     public void add(Card card){
         cards.add(card);
     }

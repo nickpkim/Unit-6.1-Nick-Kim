@@ -1,11 +1,14 @@
 public class Player {
     private int playerNum;
-    private Deck hand;
+    private Deck stack;
     public Player(int num){
         playerNum = num;
-        hand = new Deck();
+        stack = new Deck();
+    }
+    public Deck getStack(){
+        return stack;
     }
     public String toString(){
-        return hand.toString();
+        return stack.toString();
     }
 }
