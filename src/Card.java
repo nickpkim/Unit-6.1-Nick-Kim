@@ -11,19 +11,21 @@ public class Card {
     public int getSuit(){
         return suit;
     }
-    public String toString(){
-        String printVal = "";
-        String printSuit = "";
-        if (value == 11){
-            printVal = "J";
+    public String toString() {
+        String printVal;
+        String printSuit;
+        if (value == 10) {
+            printVal = "10";
+        } else if (value == 11){
+            printVal = " J";
         } else if (value == 12){
-            printVal = "Q";
+            printVal = " Q";
         } else if (value == 13){
-            printVal = "K";
+            printVal = " K";
         } else if (value == 14){
-            printVal = "A";
+            printVal = " A";
         } else {
-            printVal = value+"";
+            printVal = " "+value;
         }
         if (suit == 1){
             printSuit = "♣";

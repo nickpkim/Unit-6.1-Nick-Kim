@@ -11,16 +11,21 @@ public class Deck {
             }
         }
     }
-    public void dealHalf(Deck half){
+    public void dealHalf(ArrayList<Card> half){
         for (int i = 51; i > 25; i--){
             int index = (int)(Math.random()*i);
-            System.out.println(index);
             half.add(cards.get(index));
             cards.remove(index);
         }
     }
     public void add(Card card){
         cards.add(card);
+    }
+    public int getNumCards(){
+        return cards.size();
+    }
+    public Card getCard(int index){
+        return cards.get(index);
     }
     public String toString(){
         String str = "";
