@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+
 public class Player {
     private int playerNum;
     private ArrayList<Card> stack;
@@ -19,11 +21,17 @@ public class Player {
             stack.add(cards.getCard(i));
         }
     }
+    public Card getCard(int index){
+        return stack.get(index);
+    }
     public Card getTopCard(){
         return stack.get(0);
     }
     public ArrayList<Card> getStack(){
         return stack;
+    }
+    public void shuffleStack(){
+        Collections.shuffle(stack);
     }
     public String toString(){
         String str = "Player "+playerNum+" stack: ";
